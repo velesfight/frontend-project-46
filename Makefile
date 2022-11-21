@@ -17,7 +17,8 @@ lint:
 		npx eslint .
 
 publish:
-		npm publish
+	npm publish --dry-run
+	npm link --force
 
 gendiff:
 		node bin/gendiff.js
