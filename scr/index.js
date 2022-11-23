@@ -5,10 +5,8 @@ const genDiff = (file1, file2) => {
     const readFile2 = fs.readFileSync(path2);
     const string1 = JSON.parse(readFile1);
     const string2 = JSON.parse(readFile2);
-    const result = (string1, string2) => {
-        const keys = Object.keys({ ...string1, ...string2 });
-        const sortKeys = _.sortBy(keys);
-    const resultKey = sortKeys.map((key) => {
+    const keys = Object.keys({ ...string1, ...string2 });
+    const resultKey = Keys.map((key) => {
         const minus = '-';
         const plus = '+';
         if (Object.hasOwn(file1, key) & Object.hasOwn(file2, key)) {
