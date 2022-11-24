@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import genDiff from '../scr/index.js';
 import { Command } from 'commander';
 const program = new Command();
 program
@@ -8,4 +9,7 @@ program
   .helpOption('-h, --HELP', 'output usage information')
   .option('-f, --format <type>', 'output format')
   .arguments('<filepath1> <filepath2>')
+  .action((filepath1, filepath2) => {
+    console.log(genDiff(filepath1, filepath2));
+  })
   .parse();

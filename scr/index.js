@@ -6,14 +6,20 @@ const genDiff = (file1, file2) => {
     const string1 = JSON.parse(readFile1);
     const string2 = JSON.parse(readFile2);
     const keys = Object.keys({ ...string1, ...string2 });
-    const resultKey = Keys.map((key) => {
+    const resultKey = keys.map((key) => {
         const minus = '-';
         const plus = '+';
         if (Object.hasOwn(file1, key) & Object.hasOwn(file2, key)) {
             return { minus, kye: file1[key], plus, key: file2[key]}
         };
-        
-        
-    return resultKey;
-}
+        if(!_.has(file1, key) & _.has(file2, key)) {
+            return { plus, key: file2[key] }
+        };
+        if(!_has(file2, key) & _.has(file1, key)) {
+            return { minus, key: file2[key] }
+        };
+
+        return resultKey;
+})
 };
+export default genDiff;
