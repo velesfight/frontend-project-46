@@ -1,25 +1,14 @@
-const genDiff = (file1, file2) => {
-    const path1 = path.resolve(process.cwd(file1), file1);
-    const path2 = path.resolve(process.cwd(file2), file2);
-    const readFile1 = fs.readFileSync(path1);
-    const readFile2 = fs.readFileSync(path2);
-    const string1 = JSON.parse(readFile1);
-    const string2 = JSON.parse(readFile2);
-    const keys = Object.keys({ ...string1, ...string2 });
-    const resultKey = keys.map((key) => {
-        const minus = '-';
-        const plus = '+';
-        if (Object.hasOwn(file1, key) & Object.hasOwn(file2, key)) {
-            return { minus, kye: file1[key], plus, key: file2[key]}
-        };
-        if(!_.has(file1, key) & _.has(file2, key)) {
-            return { plus, key: file2[key] }
-        };
-        if(!_has(file2, key) & _.has(file1, key)) {
-            return { minus, key: file2[key] }
-        };
+import genDiff1 from '../scr/diffFunc.js';
+import fs from 'fs';
+import path from 'path';
 
-        return resultKey;
-})
+const genDiff = (filepath1, filepath2) => {
+
+    const fileOne = fs.readFileSync((path.resolve(filepath1)), 'utf-8');
+    const fileTwo = fs.readFileSync((path.resolve(filepath2)), 'utf-8');
+    const file1parse = JSON.parse(fileOne);
+    const file2parse = JSON.parse(fileTwo);
+    const result = genDiff1(file1parse, file2parse);
+    return JSON.stringify(result);
 };
 export default genDiff;
