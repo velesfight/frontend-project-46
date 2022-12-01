@@ -2,13 +2,16 @@ import genDiff1 from '../scr/diffFunc.js';
 import fs from 'fs';
 import path from 'path';
 
-const genDiff = (filepath1, filepath2) => {
+const getPath = (filepath) => path.resolve(process.cwd(), filepath);
+const readFile = (filepath) => fs.readFileSync((getPath(filepath)), 'utf-8');
 
-    const fileOne = fs.readFileSync((path.resolve(filepath1)), 'utf-8');
-    const fileTwo = fs.readFileSync((path.resolve(filepath2)), 'utf-8');
+const genDiff = (filepath1, filepath2) => {
+    const fileOne = readFile(filepath1);
+    const fileTwo = readFile(filepath2);
     const file1parse = JSON.parse(fileOne);
     const file2parse = JSON.parse(fileTwo);
     const result = genDiff1(file1parse, file2parse);
-    return JSON.stringify(result);
+    return result;
 };
 export default genDiff;
+
