@@ -7,9 +7,8 @@ env:
   CI: true
 
 jobs:
-  lint:
-
-    runs-on: ubuntu-latest
+  build:
+  runs-on: ubuntu-latest
     
     strategy:
       matrix:
