@@ -7,8 +7,8 @@ env:
   CI: true
 
 jobs:
-  build:
-    name: run
+  lint:
+
     runs-on: ubuntu-latest
     
     strategy:
