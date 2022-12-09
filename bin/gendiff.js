@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import genDiff from '../scr/index.js';
 import { Command } from 'commander';
+import genDiff from '../scr/index.js';
+
 const program = new Command();
 program
   .version('1.0.0')

@@ -1,9 +1,7 @@
 import { fileURLToPath } from 'url';
-import { dirname } from 'path';
-import genDiff from '../scr/index.js';
 import path from 'path';
 import fs from 'fs';
-
+import genDiff from '../scr/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -14,5 +12,5 @@ const file2json = getFixturePath('file2.json');
 const actual1 = genDiff(file1json, file2json);
 const expectedResul = readFile('result.txt');
 test('gendiff.json', () => {
-    expect(actual1).toEqual(expectedResul);
-  });
+  expect(actual1).toEqual(expectedResul);
+});
