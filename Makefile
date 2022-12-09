@@ -7,6 +7,9 @@ run:
 install-deps:
 		npm ci
 
+install:
+		npm install
+
 test:
 		npm test
 
