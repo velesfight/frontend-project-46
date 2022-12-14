@@ -10,13 +10,13 @@ const genDiff1 = (file1, file2) => {
     if (!_.has(file1, key)) {
       result.push(`+ ${key}: ${value2}`);
     } else if (!_.has(file2, key)) {
-     result.push(`- ${key}: ${value1}`);
+      result.push(`- ${key}: ${value1}`);
     } else if (value2 !== value1) {
-     result.push(`- ${key}: ${value1}\n+ ${key}: ${value2}`);
+      result.push(`- ${key}: ${value1}\n+ ${key}: ${value2}`);
     } else {
      result.push(`  ${key}: ${value1}`);
     }
   }
-        return `{\n${result.join('\n')}\n}`;
+  return `{\n${result.join('\n')}\n}`;
 };
 export default genDiff1;
