@@ -16,7 +16,7 @@ const genDiff1 = (file1, file2) => {
     } else {
       result.push(`  ${key}: ${value1}`);
     }
-  return `{\n${result.join('\n')}\n}`;
-});
-}
+    return `{\n${result.join('\n')}\n}`;
+  });
+};
 export default genDiff1;

@@ -1,6 +1,5 @@
 import { fileURLToPath } from 'url';
-import path from 'path';
-import { dirname } from 'path';
+import path, { dirname } from 'path';
 import fs from 'fs';
 import genDiff from '../scr/index.js';
 
