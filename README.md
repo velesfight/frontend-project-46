@@ -9,3 +9,9 @@
 `gendiff __fixtures__/file1.json __fixtures__/file2.json`
 https://asciinema.org/a/WBhANVB9lo3CUnTCbZYFBENqd
 [![asciicast](https://asciinema.org/a/WBhANVB9lo3CUnTCbZYFBENqd.svg)](https://asciinema.org/a/WBhANVB9lo3CUnTCbZYFBENqd)
+
+# Пример работы пакета (yaml)
+`gendiff __fixtures__/file1.yaml __fixtures__/file2.yaml`
+https://asciinema.org/a/SLqEJTrIsGAnunhUf9EAUmosq
+[![asciicast](https://asciinema.org/a/SLqEJTrIsGAnunhUf9EAUmosq.svg)](https://asciinema.org/a/SLqEJTrIsGAnunhUf9EAUmosq)
+
