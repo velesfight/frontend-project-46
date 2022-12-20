@@ -10,7 +10,10 @@ const stylish = (tree) => {
         const intendClose = replace.repeat(intendOpen - intendSize);
 
         const mass = Object.entries(node);
-        const string = mass.map()
-    }
+        const string = mass.map(([key, value]) => `${indendOpen}${key}: ${iter(value, depth + 1)}`);
+        const result = ['{', ...string, `${intendClose}}`].join('\n');
 
-}
+        return result;
+    }
+    return iter(tree, 1);
+};
