@@ -3,19 +3,23 @@ import _ from 'lodash';
 const genDiff1 = (file1, file2) => {
   const keys = Object.keys({ ...file1, ...file2 });
   const sortKeys = _.sortBy(keys);
-  const result = [];
-  sortKeys.map((key) => {
-    const value1 = file1[key];
-    const value2 = file2[key];
+  const result = sortKeys.map((key) => {
+    const valueOne = file1[key];
+    const valueTwo= file2[key];
     if (!_.has(file1, key)) {
-      return result.push(`+ ${key}: ${value2}`);
-    } if (!_.has(file2, key)) {
-      return result.push(`- ${key}: ${value1}`);
-    } if (value2 !== value1) {
-      return result.push(`- ${key}: ${value1}\n+ ${key}: ${value2}`);
+      return { type: 'addded', key, value2: valueTwo };
+    } 
+    if (!_.has(file2, key)) {
+      return { type: 'deleted', key, value1: valueOne } ;
+    } 
+    if (_.isObject(valueOne) && _.isObject(valueTwo)) {
+      return { type: 'nested', key, values: genDiff1(valueOne, valueTwo) };
     }
-    return result.push(`  ${key}: ${value1}`);
+    if (valueTwo !== valueOne) {
+      return { type: 'changed', key, value1: valueOne, value2: valueTwo };
+    } 
+    return { type: 'notchanged', key,  value: valueOne };
   });
-  return `{\n${result.join('\n')}\n}`;
+  return result;
 };
 export default genDiff1;
