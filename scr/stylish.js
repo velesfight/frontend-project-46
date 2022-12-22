@@ -22,10 +22,10 @@ const stringify= (value) => {
             const getType = currentTree.type;
             const getKey = curretnTree.key;
             if (getType === 'added') {
-                return `${(intendOpen + 2)}+ ${getKey}: ${stringify(currentTree.value2, depth + 1)}`;
+                return `${(intendOpen + 2)}+ ${getKey}: ${stringify(currentTree.value, depth + 1)}`;
             }
             if (getType === 'deleted') {
-                return `${(intendOpen + 2)}- ${getKey}: ${stringify(currentTree.value1, depth + 1)}`;
+                return `${(intendOpen + 2)}- ${getKey}: ${stringify(currentTree.value, depth + 1)}`;
             }
             if (getType === 'changet') {
                 const string1 = `${(intendOpen + 2)}- ${getKey}: ${stringify(currentTree.value1, depth + 1)}`;
@@ -33,7 +33,7 @@ const stringify= (value) => {
                 return (`${string1}('/n')${string2}`);
             }
             if (getType === 'nested') {
-                return `${(intendOpen + 6)} ${getKey}: ${stringify(currentTree.values, depth + 1)}`;
+                return `${(intendOpen + 6)} ${getKey}: ${stringify(currentTree.value, depth + 1)}`;
             }
             if (getType === 'notchanged') {
                 return `${(intendOpen + 4)}- ${getKey}: ${stringify(currentTree.value, depth + 1)}`;
