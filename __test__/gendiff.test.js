@@ -13,10 +13,17 @@ const actual1 = genDiff(file1json, file2json);
 const file1yaml = getFixturePath('file1.yaml');
 const file2yaml = getFixturePath('file2.yaml');
 const actual2 = genDiff(file1yaml, file2yaml);
-const expectedResul = readFile('result.txt');
+const expectedResultStylish = readFile('resultStylish.txt');
+const expectedResultJson = readFile('resultJson.txt');
 test('gendiff.json', () => {
-  expect(actual1).toEqual(expectedResul);
+  expect(actual1).toEqual(expectedResultStylish);
 });
 test('gendiff.yaml', () => {
-  expect(actual2).toEqual(expectedResul);
+  expect(actual2).toEqual(expectedResultStylish);
+});
+test('gendiff.json', () => {
+  expect(actual1).toEqual(expectedResultJson);
+});
+test('gendiff.yaml', () => {
+  expect(actual2).toEqual(expectedResultJson);
 });

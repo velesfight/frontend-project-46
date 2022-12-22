@@ -38,13 +38,14 @@ const stringify= (value) => {
             if (getType === 'notchanged') {
                 return `${(intendOpen + 4)}- ${getKey}: ${stringify(currentTree.value, depth + 1)}`;
             }
-            }
+            return 'Error'
+        }
         const mussEntr = Object.entries(tree);
         const lines  = mussEntr.flatMap(([key, value]) => `${intendOpen}${key}: ${stylish(value, depth + 1)}`);
         const result = ['{', ...lines, `${intendClose}}`].join('\n');
 
         return result;
-    }
-    return iter(value, 1);
+    };
+    return iterS(value, 1);
 };
 export default formaterStylish;
