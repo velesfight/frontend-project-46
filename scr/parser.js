@@ -1,4 +1,5 @@
 import yaml from 'js-yaml';
+import _ from 'lodash';
 
 const parser = (data, format) => {
 if (format === 'json') {
