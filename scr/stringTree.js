@@ -1,6 +1,7 @@
 const stringiJSON = (tree, format) => {
-    if (format === 'json') {
-        return JSON.stringify(tree);
-    }
-    }
+  if (format === 'json' || format === 'yaml') {
+    return JSON.stringify(tree);
+  }
+  return tree;
+};
 export default stringiJSON;

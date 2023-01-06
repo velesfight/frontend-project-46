@@ -9,14 +9,16 @@ const genDiff1 = (file1, file2) => {
     }
     if (!_.has(file1, key)) {
       return { type: 'addded', key, value: file2[key] };
-    } 
+    }
     if (!_.has(file2, key)) {
-      return { type: 'deleted', key, value: file1[key] } ;
-    } 
+      return { type: 'deleted', key, value: file1[key] };
+    }
     if (file2[key] !== file1[key]) {
-      return { type: 'changed', key, value1: file1[key], value2: file2[key] };
-    } 
-    return { type: 'notchanged', key,  value: file1[key] };
+      return {
+        type: 'changed', key, value1: file1[key], value2: file2[key],
+      };
+    }
+    return { type: 'notchanged', key, value: file1[key] };
   });
   return result;
 };

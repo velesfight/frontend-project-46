@@ -8,7 +8,7 @@ const getPath = (filepath) => path.resolve(filepath);
 const readFile = (filepath) => fs.readFileSync((getPath(filepath)), 'utf-8');
 const getFotmat = (filepath) => path.extname(filepath).slice(1);
 
-const genDiff = (filepath1, filepath2, format) => {
+const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const fileOne = readFile(filepath1);
   const fileTwo = readFile(filepath2);
   const format1 = getFotmat(filepath1);
