@@ -21,7 +21,8 @@ const formaterStylish = (tree) => {
   const iterS = (currentTree, depth) => {
     const getType = currentTree.type;
     const getKey = currentTree.key;
-    if (getType === 'added') {
+    const result = tree.map((currentTree) => {
+      if (getType === 'added') {
       return `${(intendOpen)}+ ${getKey}: ${treeString(currentTree.value)}`;
     }
     if (getType === 'deleted') {
@@ -38,9 +39,10 @@ const formaterStylish = (tree) => {
     if (getType === 'notchanged') {
       return `${(intendOpen)}- ${getKey}: ${treeString(currentTree.value)}`;
     }
+  });
+    return ['{', ...result, '}'].join('\n');
   };
-  const lines = tree.flatMap((currentTree) => iterS(currentTree, 1));
-  return ['{', ...lines, '}'].join('\n');
+  return (iterS(tree, 1));
 };
 
 export default formaterStylish;
