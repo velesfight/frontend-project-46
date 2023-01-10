@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 import _ from 'lodash';
 
 const replace = ' ';
@@ -18,8 +19,7 @@ const treeString = (value) => {
   return iter(value, 1);
 };
 const formaterStylish = (tree) => {
-  const result = tree.map((node) => {
-    iter(node, depth);
+  const iter = (node, depth) => {
     const getType = node.type;
     const getKey = node.key;
     if (getType === 'added') {
@@ -35,13 +35,14 @@ const formaterStylish = (tree) => {
     }
     if (getType === 'nested') {
       const nested = node.children;
-      const childrens = nested.map((node => iter(node, depth)));
-      return `${(intendOpen)} ${getKey}: ${childrens, depth + 1})}`;
+      const childrens = nested.map((node) => iter(node, depth));
+      return `${(intendOpen)} ${getKey}: ${childrens})}`;
     }
     if (getType === 'notchanged') {
       return `${(intendOpen)}- ${getKey}: ${treeString(node.value)}`;
     }
-  });
+  };
+  const result = tree.map((node) => iter(node, 1));
   return ['{', ...result, '}'].join('\n');
 };
 
