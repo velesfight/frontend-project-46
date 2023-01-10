@@ -35,15 +35,16 @@ const formaterStylish = (tree) => {
     }
     if (getType === 'nested') {
       const nested = node.children;
-      const childrens = nested.map((node) => iter(node, depth));
+      const childrens = nested.map((child) => iter(child, depth + 1));
       return `${(intendOpen)} ${getKey}: ${childrens})}`;
     }
     if (getType === 'notchanged') {
       return `${(intendOpen)}- ${getKey}: ${treeString(node.value)}`;
     }
+    const result = tree.map((child) => iter(child, 1));
+    return ['{', ...result, '}'].join('\n');
   };
-  const result = tree.map((node) => iter(node, 1));
-  return ['{', ...result, '}'].join('\n');
+  return iter(tree, 1);
 };
 
 export default formaterStylish;
