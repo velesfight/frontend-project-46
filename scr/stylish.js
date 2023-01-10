@@ -18,31 +18,31 @@ const treeString = (value) => {
   return iter(value, 1);
 };
 const formaterStylish = (tree) => {
-  const iterS = (currentTree, depth) => {
-    const getType = currentTree.type;
-    const getKey = currentTree.key;
-    const result = tree.map((currentTree) => {
-      if (getType === 'added') {
-      return `${(intendOpen)}+ ${getKey}: ${treeString(currentTree.value)}`;
+  const result = tree.map((node) => {
+    iter(node, depth);
+    const getType = node.type;
+    const getKey = node.key;
+    if (getType === 'added') {
+      return `${(intendOpen)}+ ${getKey}: ${treeString(node.value)}`;
     }
     if (getType === 'deleted') {
-      return `${(intendOpen)}- ${getKey}: ${treeString(currentTree.value)}`;
+      return `${(intendOpen)}- ${getKey}: ${treeString(node.value)}`;
     }
     if (getType === 'changet') {
-      const string1 = `${(intendOpen)}- ${getKey}: ${treeString(currentTree.value1)}`;
-      const string2 = `${(intendOpen)}+ ${getKey}: ${treeString(currentTree.value2)}`;
+      const string1 = `${(intendOpen)}- ${getKey}: ${treeString(node.value1)}`;
+      const string2 = `${(intendOpen)}+ ${getKey}: ${treeString(node.value2)}`;
       return (`${string1}('/n')${string2}`);
     }
     if (getType === 'nested') {
-      return `${(intendOpen)} ${getKey}: ${iterS(currentTree.value, depth + 1)}`;
+      const nested = node.children;
+      const childrens = nested.map((node => iter(node, depth)));
+      return `${(intendOpen)} ${getKey}: ${childrens, depth + 1})}`;
     }
     if (getType === 'notchanged') {
-      return `${(intendOpen)}- ${getKey}: ${treeString(currentTree.value)}`;
+      return `${(intendOpen)}- ${getKey}: ${treeString(node.value)}`;
     }
   });
-    return ['{', ...result, '}'].join('\n');
-  };
-  return (iterS(tree, 1));
+  return ['{', ...result, '}'].join('\n');
 };
 
 export default formaterStylish;
