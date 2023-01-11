@@ -5,7 +5,7 @@ const genDiff1 = (file1, file2) => {
   const sortKeys = _.sortBy(_.union(keys));
   const result = sortKeys.map((key) => {
     if (_.isObject(file1[key]) && _.isObject(file2[key])) {
-      return { type: 'nested', key, value: genDiff1(file1[key], file2[key]) };
+      return { type: 'nested', key, children: genDiff1(file1[key], file2[key]) };
     }
     if (!_.has(file1, key)) {
       return { type: 'addded', key, value: file2[key] };

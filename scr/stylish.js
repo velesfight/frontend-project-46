@@ -6,17 +6,14 @@ const intendSize = (depth, spaceCount = 4) => depth * spaceCount;
 const intendOpen = replace.repeat(intendSize);
 const intendClose = replace.repeat(intendOpen - intendSize);
 
-const treeString = (value) => {
-  const iter = (currentValue, depth) => {
-    if (_.isObject(currentValue) || currentValue === null) {
-      return String(currentValue);
-    }
-    const muss = Object.entries(currentValue);
-    const string = muss.map(([key, val]) => `${intendOpen}${key}: ${iter(val, depth + 1)}`);
-    const result = ['{', ...string, `${intendClose}}`].join('\n');
-    return result;
-  };
-  return iter(value, 1);
+const treeString = (data, depth) => {
+  if (_.isObject(data) || data === null) {
+    return String(data);
+  }
+  const muss = Object.entries(data);
+  const string = muss.map(([key, value]) => `${intendOpen}${key}: ${treeString(value, depth + 1)}`);
+  const result = ['{', ...string, `${intendClose}}`].join('\n');
+  return result;
 };
 const formaterStylish = (tree) => {
   const iter = (node, depth) => {
@@ -41,10 +38,9 @@ const formaterStylish = (tree) => {
     if (getType === 'notchanged') {
       return `${(intendOpen)}- ${getKey}: ${treeString(node.value)}`;
     }
-    const result = tree.map((child) => iter(child, 1));
-    return ['{', ...result, '}'].join('\n');
   };
-  return iter(tree, 1);
+  const result = tree.map((child) => iter(child, 1));
+  return ['{', ...result, '}'].join('\n');
 };
 
 export default formaterStylish;
