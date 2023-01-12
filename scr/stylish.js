@@ -2,17 +2,14 @@
 import _ from 'lodash';
 
 const replace = ' ';
-const intendSize = (depth, spaceCount = 4) => depth * spaceCount;
-const intendOpen = replace.repeat(intendSize);
-const intendClose = replace.repeat(intendOpen - intendSize);
+const intendSize = (depth, spaceCount = 4) => replace.repeat(depth * spaceCount - 2);
 
 const treeString = (data, depth) => {
-  if (_.isObject(data) || data === null) {
+  if (!_.isObject(data) || data === null) {
     return String(data);
   }
-  const muss = Object.entries(data);
-  const string = muss.map(([key, value]) => `${intendOpen}${key}: ${treeString(value, depth + 1)}`);
-  const result = ['{', ...string, `${intendClose}}`].join('\n');
+  const muss = Object.entries(data).map(([key, value]) => `${intendSize(depth + 1)}${key}: ${treeString(value, depth + 1)}`);
+  const result = ['{', ...muss, `${intendSize(depth)}}`].join('\n');
   return result;
 };
 const formaterStylish = (tree) => {
@@ -20,23 +17,23 @@ const formaterStylish = (tree) => {
     const getType = node.type;
     const getKey = node.key;
     if (getType === 'added') {
-      return `${(intendOpen)}+ ${getKey}: ${treeString(node.value)}`;
+      return `${intendSize(depth)}+ ${getKey}: ${treeString(node.value, depth)}`;
     }
     if (getType === 'deleted') {
-      return `${(intendOpen)}- ${getKey}: ${treeString(node.value)}`;
+      return `${intendSize(depth)}- ${getKey}: ${treeString(node.value, depth)}`;
     }
     if (getType === 'changet') {
-      const string1 = `${(intendOpen)}- ${getKey}: ${treeString(node.value1)}`;
-      const string2 = `${(intendOpen)}+ ${getKey}: ${treeString(node.value2)}`;
-      return (`${string1}('/n')${string2}`);
+      const string1 = `${intendSize(depth)}- ${getKey}: ${treeString(node.value1, depth)}`;
+      const string2 = `${intendSize(depth)}+ ${getKey}: ${treeString(node.value2, depth)}`;
+      return `${string1}('/n')${string2}`;
     }
     if (getType === 'nested') {
       const nested = node.children;
       const childrens = nested.map((child) => iter(child, depth + 1));
-      return `${(intendOpen)} ${getKey}: ${childrens})}`;
+      return `${intendSize(depth)} ${getKey}: ${childrens})}`;
     }
     if (getType === 'notchanged') {
-      return `${(intendOpen)}- ${getKey}: ${treeString(node.value)}`;
+      return `${(intendSize(depth))}- ${getKey}: ${treeString(node.value, depth)}`;
     }
   };
   const result = tree.map((child) => iter(child, 1));
