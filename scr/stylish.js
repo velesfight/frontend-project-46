@@ -30,13 +30,13 @@ const formaterStylish = (tree) => {
     if (getType === 'nested') {
       const nested = node.children;
       const childrens = nested.map((child) => iter(child, depth + 1));
-      return `${intendSize(depth)} ${getKey}: ${childrens})}`;
+      return `${intendSize(depth)} ${getKey}: {\n${childrens.join('\n')}\n${intendSize(depth)}}`;
     }
     if (getType === 'notchanged') {
       return `${(intendSize(depth))}- ${getKey}: ${treeString(node.value, depth)}`;
     }
   };
-  const result = tree.map((child) => iter(child, 1));
+  const result = tree.map((node) => iter(node, 1));
   return ['{', ...result, '}'].join('\n');
 };
 
