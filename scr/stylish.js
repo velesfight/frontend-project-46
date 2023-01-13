@@ -8,7 +8,7 @@ const treeString = (data, depth) => {
   if (!_.isObject(data) || data === null) {
     return String(data);
   }
-  const muss = Object.entries(data).map(([key, value]) => `${intendSize(depth)}${key}: ${treeString(value, depth + 1)}`);
+  const muss = Object.entries(data).map(([key, value]) => `${intendSize(depth + 1)}${key}: ${treeString(value, depth + 1)}`);
   const result = ['{', ...muss, `${intendSize(depth)}}`].join('\n');
   return result;
 };
