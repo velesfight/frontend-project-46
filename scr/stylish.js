@@ -8,8 +8,8 @@ const treeString = (data, depth) => {
   if (!_.isObject(data) || data === null) {
     return String(data);
   }
-  const muss = Object.entries(data).map(([key, value]) => `${intendSize(depth + 1)}${key}: ${treeString(value, depth + 1)}`);
-  const result = ['{', ...muss, `${intendSize(depth)}}`].join('\n');
+  const muss = Object.entries(data).map(([key, value]) => `${intendSize(depth + 1)}  ${key}: ${treeString(value, depth + 1)}`);
+  const result = ['{', ...muss, `${intendSize(depth)}  }`].join('\n');
   return result;
 };
 const formaterStylish = (tree) => {
@@ -30,7 +30,7 @@ const formaterStylish = (tree) => {
     if (getType === 'nested') {
       const nested = node.children;
       const childrens = nested.map((child) => iter(child, depth + 1));
-      return `${intendSize(depth)} ${getKey}: {\n${childrens.join('\n')}\n${intendSize(depth)}}`;
+      return `${intendSize(depth)}  ${getKey}: {\n${childrens.join('\n')}\n${intendSize(depth)}  }`;
     }
     if (getType === 'notchanged') {
       return `${(intendSize(depth))}  ${getKey}: ${treeString(node.value, depth)}`;

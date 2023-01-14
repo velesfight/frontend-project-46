@@ -15,3 +15,7 @@ https://asciinema.org/a/WBhANVB9lo3CUnTCbZYFBENqd
 https://asciinema.org/a/SLqEJTrIsGAnunhUf9EAUmosq
 [![asciicast](https://asciinema.org/a/SLqEJTrIsGAnunhUf9EAUmosq.svg)](https://asciinema.org/a/SLqEJTrIsGAnunhUf9EAUmosq)
 
+# Примпр работы пакета (stylish)
+`gendiff __fixtures__/file1.json __fixtures__/file2.json`
+https://asciinema.org/a/eBoE0UcVTaJ50ekJZWu72WQgf
+[![asciicast](https://asciinema.org/a/eBoE0UcVTaJ50ekJZWu72WQgf.svg)](https://asciinema.org/a/eBoE0UcVTaJ50ekJZWu72WQgf)
