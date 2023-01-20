@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 import _ from 'lodash';
 
 const replace = ' ';

@@ -1,4 +1,3 @@
-/* eslint-disable consistent-return */
 import _ from 'lodash';
 
 const valueString = (value) => {
@@ -27,15 +26,14 @@ const formaterPlain = (tree) => {
     }
     if (getType === 'nested') {
       const childrens = node.children.map((child) => (iter(child, allKeys)));
-      return `${childrens.join('\n')}`;
+      const childs = childrens.filter((child) => (child !== ''));
+      return `${childs.join('\n')}`;
     }
     if (getType === 'notchanged') {
       return '';
     }
   };
-  const result = tree
-    .filter((node) => node.type !== 'notchanged')
-    .map((node) => iter(node));
+  const result = tree.map((node) => iter(node));
   return `${result.join('\n')}`;
 };
 export default formaterPlain;
