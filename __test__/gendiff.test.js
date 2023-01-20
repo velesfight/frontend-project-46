@@ -15,6 +15,7 @@ const file2yaml = getFixturePath('file2.yaml');
 const expectedResultJson = readFile('resultJson.txt');
 const expectedResultYaml = readFile('resultYaml.txt');
 const expectedResultStylish = readFile('resultStylish.txt');
+const expectedResultPlain = readFile('resultPlain.txt');
 test.each([
   {
     a: file1json, b: file2json, format: 'json', expectresult: expectedResultJson,
@@ -27,6 +28,12 @@ test.each([
   },
   {
     a: file1json, b: file2json, format: 'stylish', expectresult: expectedResultStylish,
+  },
+  {
+    a: file1json, b: file2json, format: 'plain', expectresult: expectedResultPlain,
+  },
+  {
+    a: file1yaml, b: file2yaml, format: 'plain', expectresult: expectedResultPlain,
   },
 
 ])('gendiff %s, %s', ({
