@@ -7,13 +7,13 @@
 
 # Пример работы пакета
 `gendiff __fixtures__/file1.json __fixtures__/file2.json`
-https://asciinema.org/a/WBhANVB9lo3CUnTCbZYFBENqd
-[![asciicast](https://asciinema.org/a/WBhANVB9lo3CUnTCbZYFBENqd.svg)](https://asciinema.org/a/WBhANVB9lo3CUnTCbZYFBENqd)
+https://asciinema.org/a/6ioDoI545k2bPXVEJSab7PgFW
+[![asciicast](https://asciinema.org/a/6ioDoI545k2bPXVEJSab7PgFW.svg)](https://asciinema.org/a/6ioDoI545k2bPXVEJSab7PgFW)
 
 # Пример работы пакета (yaml)
 `gendiff __fixtures__/file1.yaml __fixtures__/file2.yaml`
-https://asciinema.org/a/SLqEJTrIsGAnunhUf9EAUmosq
-[![asciicast](https://asciinema.org/a/SLqEJTrIsGAnunhUf9EAUmosq.svg)](https://asciinema.org/a/SLqEJTrIsGAnunhUf9EAUmosq)
+https://asciinema.org/a/Xw9rCh610rQ9LUM0OQTSKwFVK
+[![asciicast](https://asciinema.org/a/Xw9rCh610rQ9LUM0OQTSKwFVK.svg)](https://asciinema.org/a/Xw9rCh610rQ9LUM0OQTSKwFVK)
 
 # Примпр работы пакета (stylish)
 `gendiff __fixtures__/file1.json __fixtures__/file2.json`
