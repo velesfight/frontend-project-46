@@ -29,8 +29,13 @@ const formaterPlain = (tree) => {
       const childrens = node.children.map((child) => (iter(child, allKeys)));
       return `${childrens.join('\n')}`;
     }
+    if (getType === 'notchanged') {
+      return '';
+    }
   };
-  const result = tree.map((node) => iter(node));
+  const result = tree
+    .filter((node) => node.type !== 'notchanged')
+    .map((node) => iter(node));
   return `${result.join('\n')}`;
 };
 export default formaterPlain;
