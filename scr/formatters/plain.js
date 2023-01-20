@@ -32,6 +32,7 @@ const formaterPlain = (tree) => {
     if (getType === 'notchanged') {
       return '';
     }
+    return 'error';
   };
   const result = tree.map((node) => iter(node));
   return `${result.join('\n')}`;

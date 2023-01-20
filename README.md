@@ -19,3 +19,8 @@ https://asciinema.org/a/SLqEJTrIsGAnunhUf9EAUmosq
 `gendiff __fixtures__/file1.json __fixtures__/file2.json`
 https://asciinema.org/a/eBoE0UcVTaJ50ekJZWu72WQgf
 [![asciicast](https://asciinema.org/a/eBoE0UcVTaJ50ekJZWu72WQgf.svg)](https://asciinema.org/a/eBoE0UcVTaJ50ekJZWu72WQgf)
+
+# Пример работы пакета (plain)
+`gendiff --format plain __fixtures__/file1.json __fixtures__/file2.json`
+https://asciinema.org/a/oQIce5oINl4jSqIrx8eFQsmTn
+[![asciicast](https://asciinema.org/a/oQIce5oINl4jSqIrx8eFQsmTn.svg)](https://asciinema.org/a/oQIce5oINl4jSqIrx8eFQsmTn)
