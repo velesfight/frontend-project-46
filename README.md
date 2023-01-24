@@ -17,20 +17,24 @@
 
 ## JSON
 `gendiff __fixtures__/file1.json __fixtures__/file2.json`
+
 [Пример](https://asciinema.org/a/6ioDoI545k2bPXVEJSab7PgFW)
 [![asciicast](https://asciinema.org/a/6ioDoI545k2bPXVEJSab7PgFW.svg)](https://asciinema.org/a/6ioDoI545k2bPXVEJSab7PgFW)
 
 ## Yaml
 `gendiff __fixtures__/file1.yaml __fixtures__/file2.yaml`
+
 [Пример](https://asciinema.org/a/Xw9rCh610rQ9LUM0OQTSKwFVK)
 [![asciicast](https://asciinema.org/a/Xw9rCh610rQ9LUM0OQTSKwFVK.svg)](https://asciinema.org/a/Xw9rCh610rQ9LUM0OQTSKwFVK)
 
 ## Stylish
 `gendiff __fixtures__/file1.json __fixtures__/file2.json`
+
 [Пример](https://asciinema.org/a/eBoE0UcVTaJ50ekJZWu72WQgf)
 [![asciicast](https://asciinema.org/a/eBoE0UcVTaJ50ekJZWu72WQgf.svg)](https://asciinema.org/a/eBoE0UcVTaJ50ekJZWu72WQgf)
 
 ## Plain
 `gendiff --format plain __fixtures__/file1.json __fixtures__/file2.json`
+
 [Пример](https://asciinema.org/a/oQIce5oINl4jSqIrx8eFQsmTn)
 [![asciicast](https://asciinema.org/a/oQIce5oINl4jSqIrx8eFQsmTn.svg)](https://asciinema.org/a/oQIce5oINl4jSqIrx8eFQsmTn)
