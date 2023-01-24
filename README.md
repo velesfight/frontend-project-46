@@ -30,9 +30,8 @@
 ## Stylish
 `gendiff __fixtures__/file1.json __fixtures__/file2.json`
 
-[Пример](https://asciinema.org/a/eBoE0UcVTaJ50ekJZWu72WQgf)
-[![asciicast](https://asciinema.org/a/eBoE0UcVTaJ50ekJZWu72WQgf.svg)](https://asciinema.org/a/eBoE0UcVTaJ50ekJZWu72WQgf)
-
+[Пример](https://asciinema.org/a/BLPWpWqHcGzw9VB2Mrn6kg8rW)
+[![asciicast](https://asciinema.org/a/BLPWpWqHcGzw9VB2Mrn6kg8rW.svg)](https://asciinema.org/a/BLPWpWqHcGzw9VB2Mrn6kg8rW)
 ## Plain
 `gendiff --format plain __fixtures__/file1.json __fixtures__/file2.json`
 
