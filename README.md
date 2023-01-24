@@ -5,35 +5,34 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/78268ac96702d411ddf7/test_coverage)](https://codeclimate.com/github/velesfight/frontend-project-46/test_coverage)
 
-# Вычислитель отличий
+# Difference Calculator
 
-Вычислитель отличий – программа, определяющая разницу между двумя структурами данных. 
-## Инструкция по запуску программы
-  1. Склонируйте данный репозиторий проекта локально.
-  2. Выполните команду "make install".
-  3. Используйте команды ниже для сравнения данных.
-
+Difference calculator is a program that perceives the difference between two data structures.
+## Instructions for starting the program
+  1. Clone this project repository.
+  2. Run the "make install" command.
+  3. Use the command below to compare data.
 
 
 ## JSON
 `gendiff __fixtures__/file1.json __fixtures__/file2.json`
 
-[Пример](https://asciinema.org/a/6ioDoI545k2bPXVEJSab7PgFW)
+[Example](https://asciinema.org/a/6ioDoI545k2bPXVEJSab7PgFW)
 [![asciicast](https://asciinema.org/a/6ioDoI545k2bPXVEJSab7PgFW.svg)](https://asciinema.org/a/6ioDoI545k2bPXVEJSab7PgFW)
 
 ## Yaml
 `gendiff __fixtures__/file1.yaml __fixtures__/file2.yaml`
 
-[Пример](https://asciinema.org/a/Xw9rCh610rQ9LUM0OQTSKwFVK)
+[Exzample](https://asciinema.org/a/Xw9rCh610rQ9LUM0OQTSKwFVK)
 [![asciicast](https://asciinema.org/a/Xw9rCh610rQ9LUM0OQTSKwFVK.svg)](https://asciinema.org/a/Xw9rCh610rQ9LUM0OQTSKwFVK)
 
 ## Stylish
 `gendiff __fixtures__/file1.json __fixtures__/file2.json`
 
-[Пример](https://asciinema.org/a/BLPWpWqHcGzw9VB2Mrn6kg8rW)
+[Example](https://asciinema.org/a/BLPWpWqHcGzw9VB2Mrn6kg8rW)
 [![asciicast](https://asciinema.org/a/BLPWpWqHcGzw9VB2Mrn6kg8rW.svg)](https://asciinema.org/a/BLPWpWqHcGzw9VB2Mrn6kg8rW)
 ## Plain
 `gendiff --format plain __fixtures__/file1.json __fixtures__/file2.json`
 
-[Пример](https://asciinema.org/a/oQIce5oINl4jSqIrx8eFQsmTn)
+[Example](https://asciinema.org/a/oQIce5oINl4jSqIrx8eFQsmTn)
 [![asciicast](https://asciinema.org/a/oQIce5oINl4jSqIrx8eFQsmTn.svg)](https://asciinema.org/a/oQIce5oINl4jSqIrx8eFQsmTn)

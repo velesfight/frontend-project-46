@@ -13,15 +13,11 @@ const filejson2 = getFixturePath('file2.json');
 const fileyaml1 = getFixturePath('file1.yaml');
 const fileyaml2 = getFixturePath('file2.yaml');
 const expectedResultJson = readFile('resultJson.txt');
-const expectedResultYaml = readFile('resultYaml.txt');
 const expectedResultStylish = readFile('resultStylish.txt');
 const expectedResultPlain = readFile('resultPlain.txt');
 test.each([
   {
     a: filejson1, b: filejson2, format: 'json', expectresult: expectedResultJson,
-  },
-  {
-    a: fileyaml1, b: fileyaml2, format: 'yaml', expectresult: expectedResultYaml,
   },
   {
     a: fileyaml1, b: fileyaml2, format: 'stylish', expectresult: expectedResultStylish,
