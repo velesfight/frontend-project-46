@@ -20,6 +20,9 @@ test.each([
     a: filejson1, b: filejson2, format: 'json', expectresult: expectedResultJson,
   },
   {
+    a: fileyaml1, b: fileyaml2, format: 'json', expectresult: expectedResultJson,
+  },
+  {
     a: fileyaml1, b: fileyaml2, format: 'stylish', expectresult: expectedResultStylish,
   },
   {
