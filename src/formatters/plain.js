@@ -35,6 +35,7 @@ const formaterPlain = (tree) => {
     return 'error';
   };
   const result = tree.map((node) => iter(node));
-  return `${result.join('\n')}`;
+  return `${result.join('\n')}\n`;
 };
+
 export default formaterPlain;
