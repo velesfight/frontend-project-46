@@ -35,8 +35,8 @@ const formaterPlain = (tree) => {
     return 'error';
   };
   const result = tree
-    .filter((node) => (node !== ''))
-    .map((node) => iter(node));
+    .map((node) => iter(node))
+    .filter((node) => (node !== ''));
 
   return `${result.join('\n')}`;
 };
