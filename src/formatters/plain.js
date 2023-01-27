@@ -25,14 +25,15 @@ const formaterPlain = (tree) => {
       return `Property '${allKeys}' was updated. From ${getString(node.value1)} to ${getString(node.value2)}`;
     }
     if (getType === 'nested') {
-      const childrens = node.children.map((child) => (iter(child, allKeys)));
-      const childs = childrens.filter((child) => (child !== ''));
-      return `${childs.join('\n')}`;
+      const childrens = node.children
+        .map((child) => (iter(child, allKeys)))
+        .filter((child) => (child !== ''));
+      return `${childrens.join('\n')}`;
     }
     if (getType === 'notchanged') {
       return '';
     }
-    return new TypeError(`Unknown type - ${getType}`);
+    return Error(`Unknown type - ${getType}`);
   };
   const result = tree
     .map((node) => iter(node))

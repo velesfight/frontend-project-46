@@ -34,7 +34,7 @@ const formaterStylish = (tree) => {
     if (getType === 'notchanged') {
       return `${(intendSize(depth))}  ${getKey}: ${getTreeString(node.value, depth)}`;
     }
-    return 'error';
+    return Error(`Unknown type - ${getType}`);
   };
   const result = tree.map((node) => iter(node, 1));
   return ['{', ...result, '}'].join('\n');

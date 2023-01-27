@@ -1,8 +1,8 @@
 import _ from 'lodash';
 
 const genDiff1 = (file1, file2) => {
-  const keys = Object.keys({ ...file1, ...file2 });
-  const sortKeys = _.sortBy(_.union(keys));
+  const getKeys = Object.keys({ ...file1, ...file2 });
+  const sortKeys = _.sortBy(_.union(getKeys));
   const result = sortKeys.map((key) => {
     if (_.isObject(file1[key]) && _.isObject(file2[key])) {
       return { type: 'nested', key, children: genDiff1(file1[key], file2[key]) };
