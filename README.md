@@ -15,6 +15,10 @@ Difference calculator is a program that perceives the difference between two dat
   2. Run the "make install" command.
   3. Use the command below to compare data.
 
+  ## Requirements
+  The Node.js version was used in this project '18.6.0' 
+  npm version '9.2.0'
+
 
 ## JSON
 `gendiff __fixtures__/file1.json __fixtures__/file2.json`

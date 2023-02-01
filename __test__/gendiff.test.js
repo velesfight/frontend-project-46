@@ -34,6 +34,9 @@ test.each([
   {
     a: fileyaml1, b: fileyaml2, format: 'plain', expectresult: expectedResultPlain,
   },
+  {
+    a: filejson1, b: filejson2, expectresult: expectedResultStylish,
+  },
 
 ])('gendiff %s, %s', ({
   a, b, format, expectresult,

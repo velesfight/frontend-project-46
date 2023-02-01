@@ -12,28 +12,28 @@ const getString = (value) => {
 
 const formatPlain = (tree) => {
   const iter = (node, parent) => {
-    const getType = node.type;
-    const getKey = node.key;
-    const allKeys = parent ? `${parent}.${getKey}` : `${getKey}`;
-    if (getType === 'deleted') {
+    const types = node.type;
+    const keys = node.key;
+    const allKeys = parent ? `${parent}.${keys}` : `${keys}`;
+    if (types === 'deleted') {
       return `Property '${allKeys}' was removed`;
     }
-    if (getType === 'added') {
+    if (types === 'added') {
       return `Property '${allKeys}' was added with value: ${getString(node.value)}`;
     }
-    if (getType === 'changed') {
+    if (types === 'changed') {
       return `Property '${allKeys}' was updated. From ${getString(node.value1)} to ${getString(node.value2)}`;
     }
-    if (getType === 'nested') {
+    if (types === 'nested') {
       const childrens = node.children
         .map((child) => (iter(child, allKeys)))
         .filter((child) => (child !== ''));
       return `${childrens.join('\n')}`;
     }
-    if (getType === 'notchanged') {
+    if (types === 'notchanged') {
       return '';
     }
-    return Error(`Unknown type - ${getType}`);
+    return Error(`Unknown type - ${types}`);
   };
   const result = tree
     .map((node) => iter(node))
