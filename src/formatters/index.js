@@ -1,5 +1,5 @@
 import formaterStylish from './stylish.js';
-import formaterPlain from './plain.js';
+import formatPlain from './plain.js';
 
 const getFormaters = (tree, format) => {
   switch (format) {
@@ -8,7 +8,7 @@ const getFormaters = (tree, format) => {
     case 'stylish':
       return formaterStylish(tree);
     case 'plain':
-      return formaterPlain(tree);
+      return formatPlain(tree);
     default: return Error(`Unknown format - ${format}`);
   }
 };

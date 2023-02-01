@@ -7,8 +7,8 @@ const getTreeString = (data, depth) => {
   if (!_.isObject(data) || data === null) {
     return String(data);
   }
-  const muss = Object.entries(data).map(([key, value]) => `${intendSize(depth + 1)}  ${key}: ${getTreeString(value, depth + 1)}`);
-  const result = ['{', ...muss, `${intendSize(depth)}  }`].join('\n');
+  const lines = Object.entries(data).map(([key, value]) => `${intendSize(depth + 1)}  ${key}: ${getTreeString(value, depth + 1)}`);
+  const result = ['{', ...lines, `${intendSize(depth)}  }`].join('\n');
   return result;
 };
 const formaterStylish = (tree) => {

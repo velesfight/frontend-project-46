@@ -10,7 +10,7 @@ const getString = (value) => {
   return String(value);
 };
 
-const formaterPlain = (tree) => {
+const formatPlain = (tree) => {
   const iter = (node, parent) => {
     const getType = node.type;
     const getKey = node.key;
@@ -42,4 +42,4 @@ const formaterPlain = (tree) => {
   return `${result.join('\n')}`;
 };
 
-export default formaterPlain;
+export default formatPlain;
