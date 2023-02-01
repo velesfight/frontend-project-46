@@ -5,7 +5,7 @@
 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/78268ac96702d411ddf7/test_coverage)](https://codeclimate.com/github/velesfight/frontend-project-46/test_coverage)
 
-[![hexlet-check](https://github.com/velesfight/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/velesfight/frontend-project-46/actions/workflows/hexlet-check.yml)
+[![Node CI](https://github.com/velesfight/frontend-project-46/actions/workflows/nodejs.yml/badge.svg)](https://github.com/velesfight/frontend-project-46/actions/workflows/nodejs.yml)
 
 # Difference Calculator
 
