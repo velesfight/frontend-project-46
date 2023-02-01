@@ -17,6 +17,7 @@ Difference calculator is a program that perceives the difference between two dat
 
   ## Requirements
   The Node.js version was used in this project '18.6.0' 
+  
   npm version '9.2.0'
 
 
